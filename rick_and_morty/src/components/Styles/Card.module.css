@@ -1,0 +1,62 @@
+.container{
+    
+    background-color: rgb(139,139, 177 );  
+    padding-top: 1cm; 
+    padding: 10px; 
+    border-radius: 10px;
+    box-shadow: 7px -5px 13px 5px rgba(2, 74, 4, 0.8);
+    text-shadow:  4px 1px 0px rgba(243, 238, 238, 0.19);
+    display: flex;
+    flex-direction: column;
+    transition: 0.8s;
+    width: 200px;
+    height: 350px; 
+    border: 1px;
+    margin: 7px;
+    opacity: 0.7;
+    
+    
+     
+    
+    
+   
+}
+
+.container:hover{
+    box-shadow:  20px 10px 5px 0px rgba(0,0,0,0.75);
+    opacity: 2;
+}
+
+
+.closeButton{
+    border: 0px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(255, 2, 2);
+    border-radius: 10px;
+    transition: 2s;
+    color: rgb(235, 235, 242);
+}
+    .closeButton:hover{
+        box-shadow:  7px 10px 5px 0px rgba(0,0,0,0.75);
+
+    }
+
+
+    .textTitulo {
+        font-size: medium;
+        font-weight: 900;
+     
+    
+    }
+
+    .textOtros{
+        font-size: x-small;
+       padding-inline: 30px;
+       line-height: 0.5em;
+       font-weight: 100;
+    }
+
+
+        
+    

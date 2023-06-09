@@ -1,0 +1,14 @@
+ .Cardscontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin:auto ;
+    /* background-color: red; */
+    padding: 5em;
+    padding-top: 3.5cm;
+    flex-wrap: wrap;
+    align-items: flex-start; 
+     
+ }
+
+
