@@ -14,5 +14,20 @@ else if (!/\S+@\S+\.\S+/.test(email)){
         return  ''
 }
 }
+
+export const validatePass = (password) =>{
+    console.log(password)
+    if (password.length < 6 || password.length > 10){
+        return 'la contraseña debe contener de 6 a 10 carac'
+    }
+
+    else if(!/^(?=.*\d).+$/.test(password)){
+        return 'falta un numero'
+    }
+
+    else {
+        return ''
+    }
+}
      
 

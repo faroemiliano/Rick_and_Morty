@@ -1,8 +1,10 @@
 import React from "react"
 import { useState } from 'react';
-import { validateEmail } from "../../validate";
+import { validateEmail, validatePass } from "../../validate";
 
-const Form = ()=> {
+
+
+const Form = (props)=> {
     const [userData, setUserData] = useState({
     email: '',
     password:'' ,
@@ -14,35 +16,49 @@ const Form = ()=> {
     })
 
 const handleOnChange = (event)=>{
-    console.log(event);
+   
     setUserData({
         ...userData,
         [event.target.name]: event.target.value
     })
+    if (event.target.name === 'email'){
+    const errorEmailMessage = validateEmail(event.target.value)
+    setError({
+        ...error,
+        email: errorEmailMessage
+    })}
+
+    if (event.target.name ==='password'){
+    const errorpass = validatePass(event.target.value)
+    setError({
+        ...error,
+        password: errorpass
+    })}
    
 }
 
 const handleOnSubmit = (event)=>{
-
     event.preventDefault()
-    const errorEmailMessage = validateEmail(userData.email)
-    setError({
-        ...error,
-        email: errorEmailMessage
-    })
+    props.login(userData)
+
+
+
+    
 }
+
     
 
 
     
     return (
-         <form onSubmit={handleOnSubmit}>
-            
+        <form onSubmit={handleOnSubmit}>
+            <img src="./img/form.png" alt="" />     
             <label htmlFor="email">E-mail</label>
             <input name="email" type="email" placeholder="Ingrese su E-mail"  onChange={handleOnChange}/>
             {error.email && <p>{error.email}</p>}
             <label htmlFor='password'>Password</label>
             <input name='password' type= 'texto' placeholder="Digite su password"  onChange={handleOnChange}/>
+            {error.password && <p>{error.password}</p>}
                 
             <button type="submit">Submit</button>
 
